@@ -1,0 +1,6 @@
+git:
+  depth:  3
+language: r
+sudo: false
+cache: packages
+script: ./scripts/run-tests.sh
