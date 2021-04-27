@@ -1,0 +1,16 @@
+---
+title: "README.md"
+author: "suszanna"
+date: "4/27/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This package contains Household Energy Usage data displayed on 4 distinct graphs in a single plot.  It is intended for climate data analysis, as a building block for subsequent study.
+
+

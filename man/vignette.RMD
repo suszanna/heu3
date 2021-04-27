@@ -1,0 +1,51 @@
+---
+title: "vignette"
+author: "suszanna"
+date: "4/21/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#### Household Energy Usage (HEU)
+#### Plot4.R
+
+The following analysis of Household Energy Usage data is typical of a building block for innovation in sustainable energy generation. It is of interest to quantify household energy usage in order to manage for less impact on longevity of species. Our data analysis is used as a foundation for such a study.  We define our starting point and goals, then hand off for innovation, design & implementation. Our requirement is to summarize a large dataset then ensure accuracy.
+
+We explore & clean the large HEU data set then view a subset of 2 days of data in a succinct graphic representation. The following steps are required to clean, format and display the plot. The data is visually summarized by the following 4 line graphs over time shown on a single plot:
+
+#### Output
+
+Graph 1- global active power data (the power consumed by appliances other than the appliances mapped to Sub Meters.)
+
+Graph 2- voltage consumed over time (The amount of power in a circuit at any instant of time is called the instantaneous power and is given by the well-known relationship of power equals volts times amps (P = V*I).)
+
+Graph 3- energy sub metering data (Submetering is a method to monitor the energy used within a building.)
+
+Graph 4- global reactive power data (power which is the overhead required to generate active power)
+
+
+#### Steps
+
+1 download, unzip raw file containing energy usage data
+
+2 load package that returns column vector format
+
+3 Read file as column data (variables)
+
+4 examine, formatted column vector data & save off 2 days of data
+
+5 Clean the data: replace any missing data in this data set
+
+6 Convert to time data type for ease of analysis
+
+7 Convert all column data to numeric datatype
+
+8 Ensure best output image quality, use png image file format
+
+9 Overlay 4 graphs (above) 2x2 on single plot 
+
+

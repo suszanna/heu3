@@ -1,0 +1,165 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'travis-badge',
+1 verbose cli   '-g' ]
+2 info using npm@2.14.12
+3 info using node@v4.3.0
+4 verbose install initial load of /usr/local/lib/package.json
+5 verbose readDependencies loading dependencies from /usr/local/lib/package.json
+6 silly cache add args [ 'travis-badge', null ]
+7 verbose cache add spec travis-badge
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'travis-badge',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'travis-badge',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: 'latest',
+8 silly cache add   type: 'tag' }
+9 silly addNamed travis-badge@latest
+10 verbose addNamed "latest" is being treated as a dist-tag for travis-badge
+11 info addNameTag [ 'travis-badge', 'latest' ]
+12 silly mapToRegistry name travis-badge
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/travis-badge
+16 verbose addNameTag registry:https://registry.npmjs.org/travis-badge not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/travis-badge
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 6:45:10 PM
+20 verbose request id bda9ff331757fbfc
+21 verbose etag W/"967b18030c4f34c3ad5ff4e64841737a"
+22 verbose lastModified Sun, 27 May 2018 19:51:22 GMT
+23 http request GET https://registry.npmjs.org/travis-badge
+24 http 304 https://registry.npmjs.org/travis-badge
+25 verbose headers { date: 'Tue, 27 Apr 2021 01:45:10 GMT',
+25 verbose headers   connection: 'keep-alive',
+25 verbose headers   'set-cookie': [ '__cfduid=dd9f30c1535701dba5e1d207fcd76c5b91619487910; expires=Thu, 27-May-21 01:45:10 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+25 verbose headers   'cf-ray': '64645eaf6c4239e3-SEA',
+25 verbose headers   age: '3190',
+25 verbose headers   'cache-control': 'public, max-age=300',
+25 verbose headers   etag: '"967b18030c4f34c3ad5ff4e64841737a"',
+25 verbose headers   'last-modified': 'Sun, 27 May 2018 19:51:22 GMT',
+25 verbose headers   vary: 'Accept-Encoding',
+25 verbose headers   'cf-cache-status': 'HIT',
+25 verbose headers   'cf-request-id': '09b299819f000039e3fd30c000000001',
+25 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+25 verbose headers   server: 'cloudflare' }
+26 silly get cb [ 304,
+26 silly get   { date: 'Tue, 27 Apr 2021 01:45:10 GMT',
+26 silly get     connection: 'keep-alive',
+26 silly get     'set-cookie': [ '__cfduid=dd9f30c1535701dba5e1d207fcd76c5b91619487910; expires=Thu, 27-May-21 01:45:10 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+26 silly get     'cf-ray': '64645eaf6c4239e3-SEA',
+26 silly get     age: '3190',
+26 silly get     'cache-control': 'public, max-age=300',
+26 silly get     etag: '"967b18030c4f34c3ad5ff4e64841737a"',
+26 silly get     'last-modified': 'Sun, 27 May 2018 19:51:22 GMT',
+26 silly get     vary: 'Accept-Encoding',
+26 silly get     'cf-cache-status': 'HIT',
+26 silly get     'cf-request-id': '09b299819f000039e3fd30c000000001',
+26 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+26 silly get     server: 'cloudflare' } ]
+27 verbose etag https://registry.npmjs.org/travis-badge from cache
+28 verbose get saving travis-badge to /Users/susanlmartin/.npm/registry.npmjs.org/travis-badge/.cache.json
+29 silly addNameTag next cb for travis-badge with tag latest
+30 silly addNamed travis-badge@1.0.1
+31 verbose addNamed "1.0.1" is a plain semver version for travis-badge
+32 silly cache afterAdd travis-badge@1.0.1
+33 verbose afterAdd /Users/susanlmartin/.npm/travis-badge/1.0.1/package/package.json not in flight; writing
+34 verbose afterAdd /Users/susanlmartin/.npm/travis-badge/1.0.1/package/package.json written
+35 silly install resolved [ { name: 'travis-badge',
+35 silly install resolved     repository:
+35 silly install resolved      { type: 'git',
+35 silly install resolved        url: 'git+https://github.com/azu/travis-badge.git' },
+35 silly install resolved     author: { name: 'azu' },
+35 silly install resolved     email: 'azuciao@gmail.com',
+35 silly install resolved     homepage: 'https://github.com/azu/travis-badge',
+35 silly install resolved     license: 'MIT',
+35 silly install resolved     bugs: { url: 'https://github.com/azu/travis-badge/issues' },
+35 silly install resolved     files: [ 'bin/' ],
+35 silly install resolved     version: '1.0.1',
+35 silly install resolved     description: 'output travis badge from git/config',
+35 silly install resolved     main: 'bin/travis-badge.js',
+35 silly install resolved     bin: { 'travis-badge': 'bin/travis-badge.js' },
+35 silly install resolved     directories: { test: 'test' },
+35 silly install resolved     scripts: { test: 'node bin/travis-badge.js' },
+35 silly install resolved     keywords: [ 'git', 'github', 'travis' ],
+35 silly install resolved     dependencies: { 'github-slug': '^1.1.0' },
+35 silly install resolved     gitHead: '3f3a962c5ef6fc4507aac9fc193236381595407a',
+35 silly install resolved     _id: 'travis-badge@1.0.1',
+35 silly install resolved     _shasum: '6c0f6a33cb9bd53c092c7ad5b8ba39676c9459f6',
+35 silly install resolved     _from: 'travis-badge@latest',
+35 silly install resolved     _npmVersion: '3.8.3',
+35 silly install resolved     _nodeVersion: '5.10.1',
+35 silly install resolved     _npmUser: { name: 'azu', email: 'azuciao@gmail.com' },
+35 silly install resolved     dist:
+35 silly install resolved      { shasum: '6c0f6a33cb9bd53c092c7ad5b8ba39676c9459f6',
+35 silly install resolved        tarball: 'https://registry.npmjs.org/travis-badge/-/travis-badge-1.0.1.tgz' },
+35 silly install resolved     maintainers: [ [Object] ],
+35 silly install resolved     _npmOperationalInternal:
+35 silly install resolved      { host: 'packages-16-east.internal.npmjs.com',
+35 silly install resolved        tmp: 'tmp/travis-badge-1.0.1.tgz_1463900891177_0.224350749514997' },
+35 silly install resolved     _resolved: 'https://registry.npmjs.org/travis-badge/-/travis-badge-1.0.1.tgz',
+35 silly install resolved     readme: 'ERROR: No README data found!' } ]
+36 info install travis-badge@1.0.1 into /usr/local/lib
+37 info installOne travis-badge@1.0.1
+38 verbose installOne of travis-badge to /usr/local/lib not in flight; installing
+39 verbose lock using /Users/susanlmartin/.npm/_locks/travis-badge-95805c7297923e7a.lock for /usr/local/lib/node_modules/travis-badge
+40 silly install write writing travis-badge 1.0.1 to /usr/local/lib/node_modules/travis-badge
+41 verbose unbuild lib/node_modules/travis-badge
+42 info preuninstall travis-badge@1.0.1
+43 info uninstall travis-badge@1.0.1
+44 verbose unbuild rmStuff travis-badge@1.0.1 from /usr/local/lib/node_modules
+45 silly gentlyRm /usr/local/bin/travis-badge is being gently removed
+46 silly gentlyRm verifying /usr/local is an npm working directory
+47 silly gentlyRm containing path /usr/local is under npm's control, in /usr/local
+48 silly gentlyRm deletion target /usr/local/bin/travis-badge is under /usr/local
+49 verbose gentlyRm vacuuming from /usr/local/bin/travis-badge up to /usr/local
+50 silly vacuum-fs removing /usr/local/bin/travis-badge
+51 silly vacuum-fs quitting because other entries in /usr/local/bin
+52 info postuninstall travis-badge@1.0.1
+53 silly gentlyRm /usr/local/lib/node_modules/travis-badge is being purged from base /usr/local
+54 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/travis-badge
+55 silly vacuum-fs purging /usr/local/lib/node_modules/travis-badge
+56 verbose unlock done using /Users/susanlmartin/.npm/_locks/travis-badge-95805c7297923e7a.lock for /usr/local/lib/node_modules/travis-badge
+57 verbose stack Error: EACCES: permission denied, rmdir '/usr/local/lib/node_modules/travis-badge'
+57 verbose stack     at Error (native)
+58 verbose cwd /Users/susanlmartin/coursera/heu3/R
+59 error Darwin 19.6.0
+60 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "travis-badge" "-g"
+61 error node v4.3.0
+62 error npm  v2.14.12
+63 error path /usr/local/lib/node_modules/travis-badge
+64 error code EACCES
+65 error errno -13
+66 error syscall rmdir
+67 error Error: EACCES: permission denied, rmdir '/usr/local/lib/node_modules/travis-badge'
+67 error     at Error (native)
+67 error  { [Error: EACCES: permission denied, rmdir '/usr/local/lib/node_modules/travis-badge']
+67 error   errno: -13,
+67 error   code: 'EACCES',
+67 error   syscall: 'rmdir',
+67 error   path: '/usr/local/lib/node_modules/travis-badge' }
+68 error Please try running this command again as root/Administrator.
+69 verbose exit [ -13, true ]
+70 verbose unbuild lib/node_modules/travis-badge
+71 info preuninstall travis-badge@1.0.1
+72 info uninstall travis-badge@1.0.1
+73 verbose unbuild rmStuff travis-badge@1.0.1 from /usr/local/lib/node_modules
+74 silly gentlyRm /usr/local/bin/travis-badge is being gently removed
+75 silly gentlyRm verifying /usr/local is an npm working directory
+76 silly gentlyRm containing path /usr/local is under npm's control, in /usr/local
+77 silly gentlyRm deletion target /usr/local/bin/travis-badge is under /usr/local
+78 verbose gentlyRm vacuuming from /usr/local/bin/travis-badge up to /usr/local
+79 info postuninstall travis-badge@1.0.1
+80 silly gentlyRm /usr/local/lib/node_modules/travis-badge is being purged from base /usr/local
+81 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/travis-badge
+82 silly vacuum-fs purging /usr/local/lib/node_modules/travis-badge
+83 error error rolling back Error: EACCES: permission denied, rmdir '/usr/local/lib/node_modules/travis-badge'
+83 error error rolling back     at Error (native)
+83 error error rolling back  { [Error: EACCES: permission denied, rmdir '/usr/local/lib/node_modules/travis-badge']
+83 error error rolling back   errno: -13,
+83 error error rolling back   code: 'EACCES',
+83 error error rolling back   syscall: 'rmdir',
+83 error error rolling back   path: '/usr/local/lib/node_modules/travis-badge' }
