@@ -4,6 +4,7 @@ language: r
 sudo: false
 cache: packages
 script: ./scripts/run-tests.sh
+install: skip
 addons:
    homebrew:
       packages:
