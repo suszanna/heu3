@@ -1,12 +1,4 @@
-git:
-  depth:  3
-language: r
-sudo: false
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
 cache: packages
-script: ./scripts/run-tests.sh
-install: skip
-addons:
-   homebrew:
-      packages:
-        heu3
-      update: true
