@@ -4,3 +4,8 @@ language: r
 sudo: false
 cache: packages
 script: ./scripts/run-tests.sh
+addons:
+   homebrew:
+      packages:
+        heu3
+      update: true
