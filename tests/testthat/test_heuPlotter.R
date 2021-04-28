@@ -1,7 +1,7 @@
 # Install the released version from CRAN
 # install.packages("testthat")
 
-# use the development version of testthat from GitHub
+# use the development version of testthat from GitHub & run these tests
 # install.packages("devtools")
 devtools::install_github("r-lib/testthat")
 
