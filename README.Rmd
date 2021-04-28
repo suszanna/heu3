@@ -13,4 +13,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This package contains Household Energy Usage data displayed on 4 distinct graphs in a single plot.  It is intended for climate data analysis, as a building block for subsequent study.
 
-
+  <!-- badges: start -->
+  [![R-CMD-check](https://github.com/suszanna/heu/workflows/R-CMD-check/badge.svg)](https://github.com/suszanna/heu/actions)
+  <!-- badges: end -->
