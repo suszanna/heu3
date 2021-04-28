@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
-This package contains Household Energy Usage data displayed on 4 distinct graphs in a single plot.  It is intended for climate data analysis, as a building block for subsequent study.
+This package contains Household Energy Usage data displayed on 4 distinct graphs in a single plot.  It is intended for climate data analysis, as a building block for subsequent study: written in R on Rstudio, version controlled by Git, stored on Github, built on Travis.
 
   <!-- badges: start -->
   [![R-CMD-check](https://github.com/suszanna/heu/workflows/R-CMD-check/badge.svg)](https://github.com/suszanna/heu/actions)
