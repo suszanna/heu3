@@ -1,0 +1,135 @@
+---
+title: "fars_functions.R"
+author: "suszanna"
+date: "4/16/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Instructions for submission
+##### Please upload the file 'fars_functions.R' containing the roxygen2-style documentation that you have written for the supplied functions. This is an R Markdown document: see <http://rmarkdown.rstudio.com>.  When you click the **Knit** button a document will be generated 
+```{r}
+#have mirror set before running this line programmatically
+#install.packages(c("devtools", "roxygen2", "testthat","knitr"))
+#install.packages("rstudioapi")
+rstudioapi::isAvailable("0.99.149")
+devtools::install_github("hadley/devtools")
+library(devtools)
+devtools::session_info()
+has_devel()
+```
+
+
+```{r fars1}
+# input:  csv filename (data)
+# output: dataframe from csv file conversion to df
+# This function does: 
+# if csv file does not exist, reports so and exits
+# if csv file exists, reads file, converts to data frame & returns df
+# error handling: file does not exist (cannot be found)
+#                 file content cannot be read using readr::readcsv
+# usage: new_df = fars_read(your_csvfile)
+
+fars_read <- function(filename) {
+        if(!file.exists(filename))
+                stop("file '", filename, "' does not exist")
+        data <- suppressMessages({
+                readr::read_csv(filename, progress = FALSE)
+        })
+        dplyr::tbl_df(data)
+}
+```
+
+```{r fars2}
+# input:  year
+# output: updated file name which now includes the year from the input
+# This function does: locates & updates file name, then prints it
+# Error handling: 
+#  'year' format compatible with functions as.integer() & sprintf()
+# usage: make_filename <- function(1977) rename and print new filename
+
+make_filename <- function(year) {
+        year <- as.integer(year)
+        sprintf("accident_%d.csv.bz2", year)
+}
+```
+
+```{r fars3}
+# input: years
+# output: data available in file for years in input, in fars_read_years
+# This function does: Reads data from file only for specified years
+# error handling: 
+#  implementing new function, make_filename(year) - in the hope that it #  has been debugged & is working as intended.
+#  ensure fars_read() passes all unit testing
+#  tryCatch returns error on invalid year
+# usage: fars_read_years()
+
+fars_read_years <- function(years) {
+        lapply(years, function(year) {
+                file <- make_filename(year)
+                tryCatch({
+                        dat <- fars_read(file)
+                        dplyr::mutate(dat, year = year) %>% 
+                                dplyr::select(MONTH, year)
+                }, error = function(e) {
+                        warning("invalid year: ", year)
+                        return(NULL)
+                })
+        })
+}
+```
+
+```{r fars4}
+# input: years
+# output: summary of years
+# This function does: creates summary of data grouped by year & month
+# error handling: 
+# ensure all dependencies (functions used) are fully unit-tested
+# usage: mysummary <- fars_summaryize_years(years)
+
+fars_summarize_years <- function(years) {
+        dat_list <- fars_read_years(years)
+        dplyr::bind_rows(dat_list) %>% 
+                dplyr::group_by(year, MONTH) %>% 
+                dplyr::summarize(n = n()) %>%
+                tidyr::spread(year, n)
+}
+```
+
+```{r fars5}
+# input:  state ID and year
+# output: map of state in fars format
+# This function does: creates map of a state induding stateID and year
+# error handling: 
+#    ensure all dependencies (functions called) are fully unit tested
+#    check for invalid state ID
+#    ensure state number is invalid when exiting on invalid state number
+#    ensure 'no accidents to plot' is issued on valid data
+#    test to ensure is.na has removed all no value fields from data when #      map is drawn
+# usage: fars_map_state <- function(35, 1977) outputs accurate map
+
+fars_map_state <- function(state.num, year) {
+        filename <- make_filename(year)
+        data <- fars_read(filename)
+        state.num <- as.integer(state.num)
+
+        if(!(state.num %in% unique(data$STATE)))
+                stop("invalid STATE number: ", state.num)
+        data.sub <- dplyr::filter(data, STATE == state.num)
+        if(nrow(data.sub) == 0L) {
+                message("no accidents to plot")
+                return(invisible(NULL))
+        }
+        is.na(data.sub$LONGITUD) <- data.sub$LONGITUD > 900
+        is.na(data.sub$LATITUDE) <- data.sub$LATITUDE > 90
+        with(data.sub, {
+                maps::map("state", ylim = range(LATITUDE, na.rm = TRUE),
+                          xlim = range(LONGITUD, na.rm = TRUE))
+                graphics::points(LONGITUD, LATITUDE, pch = 46)
+        })
+}
+```
+
