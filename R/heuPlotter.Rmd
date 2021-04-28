@@ -1,4 +1,4 @@
-# Plot4.R
+# heuPlotter.Rmd
 # github.com/suszanna
 # coursera/JHU: Exploratory Data Analysis
 #
